@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Répertoire — Maison Andresi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@300;400&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="language-switch" aria-label="Langue">
+    <button type="button" data-lang="fr">FR</button>
+    <span>/</span>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+
+  <main class="container">
+    <h1 class="section-title" data-i18n="repertoire.title">Répertoire</h1>
+
+    <p class="subtle-caption" data-repertoire-empty data-i18n="repertoire.empty" hidden>
+      Aucun élément n’est encore enregistré.
+    </p>
+
+    <section class="repertoire-item" data-repertoire-item>
+      <h2 class="repertoire-title" data-i18n="repertoire.itemTitle">
+        Cercle Premier — Set de 18 pièces
+      </h2>
+      <p class="repertoire-description" data-i18n="repertoire.itemDescription">
+        Ensemble complet destiné à six convives. Trois formes. Un langage.
+      </p>
+      <button type="button" data-action="remove-repertoire" data-i18n="repertoire.remove">
+        Retirer
+      </button>
+    </section>
+
+    <div class="actions">
+      <a href="acces.html" class="action-secondary" data-i18n="repertoire.request">
+        Demander l’accès
+      </a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <a href="collection.html" data-i18n="footer.collection">Collection</a>
+    <a href="acces.html" data-i18n="footer.access">Accès</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
