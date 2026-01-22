@@ -13,12 +13,6 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="language-switch" aria-label="Sélection de langue">
-    <a href="set.html" class="active">FR</a>
-    <span>/</span>
-    <a href="set-en.html">EN</a>
-  </div>
-
   <main class="container">
     <header class="set-header">
       <p class="metadata">Set de réception, 18 pièces</p>
@@ -38,33 +32,21 @@ Le reste relève du geste, du plat, de l’hôte.
     </section>
 
     <section class="image-grid">
-      <img
-        class="image-mockup large"
-        src="assets/mockup002.svg"
-        alt="Mockup002 pour l'image principale du set"
-      />
-      <img
-        class="image-mockup small"
-        src="assets/mockup003.svg"
-        alt="Mockup003 pour le détail du set"
-      />
+      <div class="image-placeholder" aria-label="Image principale du set">
+        Image principale
+      </div>
+      <div class="image-placeholder small" aria-label="Détail du set">
+        Détail du set
+      </div>
     </section>
 
     <div class="centered-action">
-      <button
-        type="button"
-        data-action="add-repertoire"
-        data-item-id="set-reception-18"
-        data-label-add="Ajouter au répertoire"
-        data-label-added="Ajouté au répertoire"
-      >
-        Ajouter au répertoire
-      </button>
+      <button type="button" data-action="add-repertoire">Ajouter au répertoire</button>
     </div>
   </main>
 
   <footer class="footer">
-    <a href="manifesto.html">Manifeste</a>
+    <a href="manifesto.html">Manifesto</a>
     <a href="repertoire.html">Votre répertoire</a>
     <a href="info.html">Information</a>
   </footer>

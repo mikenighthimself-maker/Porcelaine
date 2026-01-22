@@ -1,7 +1,13 @@
 const REPERTOIRE_KEY = "porcelaineRepertoire";
 
-const saveRepertoire = (itemId) => {
-  localStorage.setItem(REPERTOIRE_KEY, JSON.stringify({ id: itemId }));
+const repertoireItem = {
+  id: "set-reception-18",
+  title: "Set de réception, 18 pièces",
+  description: "Ensemble clos destiné à six convives. Trois formes. Un langage.",
+};
+
+const saveRepertoire = (item) => {
+  localStorage.setItem(REPERTOIRE_KEY, JSON.stringify(item));
 };
 
 const getRepertoire = () => {
@@ -18,9 +24,7 @@ const getRepertoire = () => {
 
 const updateButtonState = (button, isAdded) => {
   if (!button) return;
-  const labelAdd = button.dataset.labelAdd || "Ajouter au répertoire";
-  const labelAdded = button.dataset.labelAdded || "Ajouté au répertoire";
-  button.textContent = isAdded ? labelAdded : labelAdd;
+  button.textContent = isAdded ? "Ajouté au répertoire" : "Ajouter au répertoire";
   button.disabled = isAdded;
 };
 
@@ -32,9 +36,7 @@ const initSetPage = () => {
   updateButtonState(addButton, Boolean(stored));
 
   addButton.addEventListener("click", () => {
-    const itemId = addButton.dataset.itemId;
-    if (!itemId) return;
-    saveRepertoire(itemId);
+    saveRepertoire(repertoireItem);
     updateButtonState(addButton, true);
   });
 };
@@ -43,29 +45,17 @@ const initRepertoirePage = () => {
   const titleEl = document.querySelector("[data-repertoire-title]");
   const descriptionEl = document.querySelector("[data-repertoire-description]");
   const emptyEl = document.querySelector("[data-repertoire-empty]");
-  const itemEl = document.querySelector("[data-repertoire-item]");
 
   const stored = getRepertoire();
   if (!stored) {
     if (emptyEl) {
       emptyEl.hidden = false;
     }
-    if (itemEl) {
-      itemEl.hidden = true;
-    }
     return;
   }
 
-  if (itemEl) {
-    itemEl.hidden = false;
-  }
-
-  if (titleEl && titleEl.dataset.defaultText) {
-    titleEl.textContent = titleEl.dataset.defaultText;
-  }
-  if (descriptionEl && descriptionEl.dataset.defaultText) {
-    descriptionEl.textContent = descriptionEl.dataset.defaultText;
-  }
+  if (titleEl) titleEl.textContent = stored.title;
+  if (descriptionEl) descriptionEl.textContent = stored.description;
 };
 
 document.addEventListener("DOMContentLoaded", () => {
