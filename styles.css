@@ -1,0 +1,251 @@
+:root {
+  --off-white: #f7f4ef;
+  --deep-neutral: #111111;
+  --royal-blue: #1c2e6d;
+  --muted-gold: #b49b5b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Playfair Display", "Times New Roman", serif;
+  background: var(--off-white);
+  color: var(--deep-neutral);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+main {
+  min-height: 80vh;
+}
+
+a {
+  color: var(--royal-blue);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+a:hover,
+a:focus {
+  border-color: var(--royal-blue);
+}
+
+button {
+  font-family: inherit;
+  font-size: 1rem;
+  background: transparent;
+  color: var(--royal-blue);
+  border: 1px solid var(--royal-blue);
+  padding: 0.85rem 2.5rem;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+button:hover,
+button:focus {
+  color: var(--deep-neutral);
+  border-color: var(--deep-neutral);
+}
+
+button[disabled] {
+  cursor: default;
+  color: #666666;
+  border-color: #666666;
+}
+
+.container {
+  width: min(960px, 90vw);
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100vh;
+  background: #e7e1d8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image::after {
+  content: "Image placeholder";
+  font-family: "Inter", "Helvetica Neue", sans-serif;
+  font-size: 0.9rem;
+  color: #8b847a;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.centered-text {
+  text-align: center;
+  margin-top: 3.5rem;
+  font-size: 1.2rem;
+}
+
+.centered-action {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.manifesto {
+  font-size: 1.6rem;
+  white-space: pre-line;
+}
+
+.metadata {
+  font-family: "Inter", "Helvetica Neue", sans-serif;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.set-header {
+  margin-bottom: 2.5rem;
+}
+
+.set-header h1 {
+  font-size: 2.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.set-header p {
+  font-size: 1.1rem;
+}
+
+.description {
+  font-size: 1.05rem;
+  white-space: pre-line;
+  margin-bottom: 3rem;
+}
+
+.image-grid {
+  display: grid;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.image-placeholder {
+  background: #e7e1d8;
+  border: 1px solid #ddd6cc;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", "Helvetica Neue", sans-serif;
+  color: #8b847a;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+}
+
+.image-placeholder.small {
+  height: 260px;
+}
+
+.repertoire-item {
+  border-top: 1px solid #ddd6cc;
+  border-bottom: 1px solid #ddd6cc;
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+}
+
+.repertoire-title {
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.repertoire-description {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.value-block {
+  margin-bottom: 2rem;
+}
+
+.value-block .label {
+  font-family: "Inter", "Helvetica Neue", sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.value-block .value {
+  font-size: 1.4rem;
+  color: var(--royal-blue);
+}
+
+.value-block .detail {
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+.footnote {
+  font-size: 0.85rem;
+  color: #5f5a54;
+  border-top: 1px solid var(--muted-gold);
+  padding-top: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.info-section {
+  margin-bottom: 2.5rem;
+}
+
+.info-section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.footer {
+  width: min(960px, 90vw);
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+  border-top: 1px solid #ddd6cc;
+  font-family: "Inter", "Helvetica Neue", sans-serif;
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer a {
+  color: #55504a;
+  border-bottom: 1px solid transparent;
+}
+
+.footer a:hover,
+.footer a:focus {
+  border-color: #55504a;
+}
+
+@media (max-width: 720px) {
+  .container {
+    padding: 3rem 0;
+  }
+
+  .set-header h1 {
+    font-size: 2rem;
+  }
+
+  .manifesto {
+    font-size: 1.3rem;
+  }
+
+  .image-placeholder {
+    height: 300px;
+  }
+}
