@@ -154,6 +154,23 @@ const setupModal = () => {
 const getNavigatorLang = () =>
   navigator.language && navigator.language.toLowerCase().startsWith("fr") ? "fr" : "en";
 
+const getBasePath = () => {
+  const path = window.location.pathname;
+  const localeMatch = path.match(/^(.*?)(\/fr\/|\/en\/)/);
+  if (localeMatch) {
+    return localeMatch[1] || "";
+  }
+  if (path.endsWith("/index.html")) {
+    return path.replace(/\/index\.html$/, "");
+  }
+  if (path.endsWith("/")) {
+    return path.replace(/\/$/, "");
+  }
+  return "";
+};
+
+const hasLocalePrefix = (lang) => window.location.pathname.includes(`/${lang}/`);
+
 const getStoredLang = () => localStorage.getItem(LANG_KEY);
 
 const setStoredLang = (lang) => {
@@ -169,24 +186,24 @@ const setupLangPersistence = () => {
 };
 
 const persistCurrentLang = () => {
-  const path = window.location.pathname;
-  if (path.startsWith("/fr/")) {
+  if (hasLocalePrefix("fr")) {
     setStoredLang("fr");
-  } else if (path.startsWith("/en/")) {
+  } else if (hasLocalePrefix("en")) {
     setStoredLang("en");
   }
 };
 
 const handleRootRedirect = () => {
   const path = window.location.pathname;
-  const isRoot = path === "/" || path.endsWith("/index.html");
-  const isLocalized = path.startsWith("/fr/") || path.startsWith("/en/");
+  const isLocalized = hasLocalePrefix("fr") || hasLocalePrefix("en");
+  const isRoot = !isLocalized && (path.endsWith("/") || path.endsWith("/index.html"));
   if (!isRoot || isLocalized) return;
   if (!document.body.dataset.langRedirect) return;
 
   const stored = getStoredLang();
   if (!stored) return;
-  const target = stored === "fr" ? "/fr/index.html" : "/en/index.html";
+  const basePath = getBasePath();
+  const target = `${basePath}/${stored}/index.html`;
   window.location.replace(target);
 };
 
