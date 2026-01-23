@@ -13,61 +13,48 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="brand" data-i18n="nav.brand">Maison Andresi</div>
-    <nav class="site-nav" aria-label="Navigation principale">
-      <a href="set.html" data-i18n="nav.collection">Collection</a>
-      <a href="repertoire.html" data-i18n="nav.repertoire">Répertoire</a>
-      <a href="acces.html" data-i18n="nav.access">Accès</a>
-      <a href="info.html" data-i18n="nav.info">Information</a>
-      <div class="language-switch" aria-label="Langue">
-        <button type="button" data-lang="fr">FR</button>
-        <span>/</span>
-        <button type="button" data-lang="en">EN</button>
-      </div>
-    </nav>
-  </header>
+  <div class="language-switch" aria-label="Langue">
+    <button type="button" data-lang="fr">FR</button>
+    <span>/</span>
+    <button type="button" data-lang="en">EN</button>
+  </div>
 
   <main class="container">
     <h1 class="section-title" data-i18n="access.title">Demander l’accès</h1>
-    <p class="manifesto-text" data-i18n="access.note">Accès accordé au cas par cas.</p>
+    <p class="manifesto-text" data-i18n="access.intro">
+      Une demande permet d’ouvrir un échange sobre et personnalisé.
+    </p>
 
-    <form class="form-grid" action="mailto:contact@andresi.house" method="post" enctype="text/plain">
+    <form class="form-grid" aria-label="Formulaire d’accès">
       <div>
-        <label for="name" data-i18n="access.name">Nom</label>
-        <input id="name" name="name" type="text" required />
+        <label for="last-name" data-i18n="access.name">Nom</label>
+        <input id="last-name" name="last-name" type="text" required />
+      </div>
+      <div>
+        <label for="first-name" data-i18n="access.firstname">Prénom</label>
+        <input id="first-name" name="first-name" type="text" required />
       </div>
       <div>
         <label for="email" data-i18n="access.email">Email</label>
         <input id="email" name="email" type="email" required />
       </div>
       <div>
-        <label for="address" data-i18n="access.address">Adresse postale complète</label>
-        <textarea id="address" name="address" required></textarea>
-      </div>
-      <div class="checkbox-line">
-        <input id="letter" name="letter" type="checkbox" />
-        <label for="letter" data-i18n="access.letter">Je souhaite recevoir une lettre physique</label>
+        <label for="phone" data-i18n="access.phone">Téléphone</label>
+        <input id="phone" name="phone" type="tel" />
       </div>
       <div>
-        <label for="context" data-i18n="access.context">Contexte d’achat</label>
-        <textarea id="context" name="context"></textarea>
-      </div>
-      <div>
-        <label for="referral" data-i18n="access.referral">Code de parrainage (recommandé)</label>
-        <input id="referral" name="referral" type="text" />
+        <label for="message" data-i18n="access.message">Motif de la demande</label>
+        <textarea id="message" name="message"></textarea>
       </div>
       <button type="submit" data-i18n="access.submit">Envoyer la demande</button>
     </form>
   </main>
 
   <footer class="footer">
-    <a href="manifesto.html" data-i18n="manifesto.title">Silence</a>
-    <a href="set.html" data-i18n="nav.collection">Collection</a>
-    <a href="repertoire.html" data-i18n="nav.repertoire">Répertoire</a>
-    <a href="info.html" data-i18n="nav.info">Information</a>
+    <a href="collection.html" data-i18n="footer.collection">Collection</a>
+    <a href="repertoire.html" data-i18n="footer.repertoire">Répertoire</a>
   </footer>
 
-  <script src="i18n.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
