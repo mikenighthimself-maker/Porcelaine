@@ -1,3 +1,4 @@
+/* Updates: introduce Maison Andresi typography variables, soften weights/spacing, and set homepage hero background treatment. */
 :root {
   color-scheme: light;
   --bg: #f7f3ef;
@@ -11,6 +12,8 @@
   --shadow: 0 18px 40px rgba(24, 24, 24, 0.12);
   --radius: 18px;
   --max-width: 1120px;
+  --font-primary: "Canela", "Times New Roman", serif;
+  --font-secondary: "Inter", "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
 }
 
@@ -22,7 +25,7 @@
 
 body {
   margin: 0;
-  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-secondary);
   color: var(--text);
   background: var(--bg);
   line-height: 1.6;
@@ -86,9 +89,10 @@ button:focus-visible {
 }
 
 .brand {
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-family: var(--font-primary);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: none;
   font-size: 0.95rem;
 }
 
@@ -97,6 +101,8 @@ button:focus-visible {
   gap: 1.5rem;
   flex-wrap: wrap;
   font-size: 0.95rem;
+  font-family: var(--font-primary);
+  letter-spacing: 0.02em;
 }
 
 .nav-links a {
@@ -140,6 +146,30 @@ button:focus-visible {
   padding: 2rem 0;
 }
 
+.home .site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  border-bottom: none;
+}
+
+.home .hero--full {
+  min-height: 100vh;
+  padding: 0;
+  background-image: url("../assets/img/hero_1920x1080.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.home .hero-grid {
+  min-height: 100%;
+  align-items: center;
+  padding: 6rem 0 3rem;
+}
+
 .hero-grid {
   display: grid;
   gap: 2.5rem;
@@ -163,6 +193,9 @@ button:focus-visible {
 }
 
 .hero-card h1 {
+  font-family: var(--font-primary);
+  letter-spacing: 0.02em;
+  font-weight: 500;
   font-size: clamp(2rem, 2.5vw, 3rem);
   margin-top: 0;
 }
@@ -181,7 +214,7 @@ button:focus-visible {
   border: 2px solid var(--accent);
   background: var(--accent);
   color: #fff;
-  font-weight: 600;
+  font-weight: 500;
   transition: 0.2s ease;
 }
 
@@ -200,8 +233,22 @@ button:focus-visible {
 }
 
 .section-title {
+  font-family: var(--font-primary);
+  letter-spacing: 0.02em;
+  font-weight: 500;
   font-size: clamp(1.5rem, 2.2vw, 2rem);
   margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-primary);
+  letter-spacing: 0.02em;
+  font-weight: 500;
 }
 
 .feature-grid {
@@ -246,7 +293,7 @@ button:focus-visible {
 
 .price {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--accent);
 }
 
@@ -372,7 +419,11 @@ button:focus-visible {
   background: var(--accent-light);
   color: var(--accent);
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 500;
+}
+
+.manifesto-content {
+  font-family: var(--font-primary);
 }
 
 .language-selector {
