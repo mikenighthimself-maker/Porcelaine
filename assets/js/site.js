@@ -1,14 +1,16 @@
 const LANG_KEY = "lang";
 const LANGUAGE_PATHS = {
   en: {
-    "index.html": "index.html",
+    "home.html": "home.html",
+    "index.html": "home.html",
     "manifesto.html": "manifesto.html",
     "collections.html": "collections.html",
     "information.html": "information.html",
     "repertoire.html": "repertoire.html",
   },
   fr: {
-    "index.html": "index.html",
+    "home.html": "home.html",
+    "index.html": "home.html",
     "manifesto.html": "manifeste.html",
     "manifeste.html": "manifeste.html",
     "collections.html": "collections.html",
@@ -32,7 +34,7 @@ const getCurrentLang = () => {
 
 const getCurrentFile = () => {
   const segments = window.location.pathname.split("/");
-  return segments[segments.length - 1] || "index.html";
+  return segments[segments.length - 1] || "home.html";
 };
 
 const buildPath = (lang, file) => `/${lang}/${file}`;
@@ -40,7 +42,7 @@ const buildPath = (lang, file) => `/${lang}/${file}`;
 const resolveTargetPath = (lang) => {
   const file = getCurrentFile();
   const mapping = LANGUAGE_PATHS[lang] || {};
-  const targetFile = mapping[file] || LANGUAGE_PATHS[lang]["index.html"];
+  const targetFile = mapping[file] || LANGUAGE_PATHS[lang]["home.html"];
   return buildPath(lang, targetFile);
 };
 
@@ -65,7 +67,7 @@ const applyActiveNavLink = () => {
     const href = link.getAttribute("href");
     if (!href) return;
     const linkUrl = new URL(href, window.location.origin);
-    const linkFile = linkUrl.pathname.split("/").pop() || "index.html";
+    const linkFile = linkUrl.pathname.split("/").pop() || "home.html";
     link.classList.toggle("active", linkFile === currentFile);
   });
 };
