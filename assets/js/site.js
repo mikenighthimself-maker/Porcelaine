@@ -5,6 +5,7 @@ const LANGUAGE_PATHS = {
     "manifesto.html": "manifesto.html",
     "collections.html": "collections.html",
     "information.html": "information.html",
+    "repertoire.html": "repertoire.html",
   },
   fr: {
     "index.html": "index.html",
@@ -13,6 +14,7 @@ const LANGUAGE_PATHS = {
     "collections.html": "collections.html",
     "information.html": "informations.html",
     "informations.html": "informations.html",
+    "repertoire.html": "repertoire.html",
   },
 };
 
@@ -42,12 +44,6 @@ const resolveTargetPath = (lang) => {
   return buildPath(lang, targetFile);
 };
 
-const applyLangState = (lang) => {
-  document.querySelectorAll("[data-lang-toggle]").forEach((button) => {
-    button.classList.toggle("active", button.dataset.lang === lang);
-  });
-};
-
 const handleLanguageRedirect = () => {
   const stored = getStoredLang();
   const preferred = stored || getNavigatorLang();
@@ -61,34 +57,20 @@ const handleLanguageRedirect = () => {
   if (!stored) {
     localStorage.setItem(LANG_KEY, preferred);
   }
-
-  applyLangState(current || preferred);
 };
 
-const handleLanguageToggle = () => {
-  document.querySelectorAll("[data-lang-toggle]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const targetLang = button.dataset.lang;
-      localStorage.setItem(LANG_KEY, targetLang);
-      window.location.href = resolveTargetPath(targetLang);
-    });
+const applyActiveNavLink = () => {
+  const currentFile = getCurrentFile();
+  document.querySelectorAll("nav a").forEach((link) => {
+    const href = link.getAttribute("href");
+    if (!href) return;
+    const linkUrl = new URL(href, window.location.origin);
+    const linkFile = linkUrl.pathname.split("/").pop() || "index.html";
+    link.classList.toggle("active", linkFile === currentFile);
   });
-};
-
-const handleReducedMotion = () => {
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  if (!prefersReducedMotion.matches) return;
-
-  document.documentElement.classList.add("reduced-motion");
-  const landingVideo = document.querySelector("[data-landing-video]");
-  if (landingVideo) {
-    landingVideo.pause();
-    landingVideo.removeAttribute("autoplay");
-  }
 };
 
 document.addEventListener("DOMContentLoaded", () => {
   handleLanguageRedirect();
-  handleLanguageToggle();
-  handleReducedMotion();
+  applyActiveNavLink();
 });
