@@ -75,7 +75,20 @@ const handleLanguageToggle = () => {
   });
 };
 
+const handleReducedMotion = () => {
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (!prefersReducedMotion.matches) return;
+
+  document.documentElement.classList.add("reduced-motion");
+  const landingVideo = document.querySelector("[data-landing-video]");
+  if (landingVideo) {
+    landingVideo.pause();
+    landingVideo.removeAttribute("autoplay");
+  }
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   handleLanguageRedirect();
   handleLanguageToggle();
+  handleReducedMotion();
 });

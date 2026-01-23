@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Silence — Maison Andresi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@300;400&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="language-switch" aria-label="Langue">
+    <button type="button" data-lang="fr">FR</button>
+    <span>/</span>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+
+  <main class="container">
+    <h1 class="section-title" data-i18n="silence.title">Silence</h1>
+
+    <section class="gallery-grid two-columns">
+      <img
+        class="image-mockup tall"
+        src="assets/mockup004.svg"
+        alt="Mockup004"
+      />
+      <img
+        class="image-mockup medium"
+        src="assets/mockup005.svg"
+        alt="Mockup005"
+      />
+    </section>
+
+    <p class="manifesto-text" data-i18n="silence.text">
+      Quelques pièces suffisent à instaurer le rythme.
+      Le reste relève du regard.
+    </p>
+
+    <div class="actions">
+      <a href="collection.html" class="action-secondary" data-i18n="silence.link">
+        Collection
+      </a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <a href="collection.html" data-i18n="footer.collection">Collection</a>
+    <a href="repertoire.html" data-i18n="footer.repertoire">Répertoire</a>
+    <a href="acces.html" data-i18n="footer.access">Accès</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

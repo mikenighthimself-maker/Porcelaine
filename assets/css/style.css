@@ -75,16 +75,36 @@ button:focus-visible {
 }
 
 .landing {
-  background-image: url("/assets/img/landing.jpg");
-  background-size: cover;
-  background-position: center;
+  background: url("/assets/img/landing-poster.jpg") center/cover no-repeat;
 }
 
-.landing-overlay {
+.video-bg {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
   z-index: -1;
+}
+
+.reduced-motion .video-bg {
+  display: none;
+}
+
+.reduced-motion .video-overlay {
+  background: rgba(0, 0, 0, 0.35);
 }
 
 .landing-content {

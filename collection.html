@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cercle Premier — Maison Andresi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@300;400&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="language-switch" aria-label="Langue">
+    <button type="button" data-lang="fr">FR</button>
+    <span>/</span>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+
+  <main class="container">
+    <h1 class="section-title" data-i18n="collection.title">Cercle Premier</h1>
+    <p class="subtle-caption" data-i18n="collection.subtitle">Set de 18 pièces</p>
+
+    <section class="gallery-grid three-columns">
+      <img class="image-mockup short" src="assets/mockup006.svg" alt="Mockup006" />
+      <img class="image-mockup short" src="assets/mockup007.svg" alt="Mockup007" />
+      <img class="image-mockup short" src="assets/mockup008.svg" alt="Mockup008" />
+      <img class="image-mockup short" src="assets/mockup009.svg" alt="Mockup009" />
+      <img class="image-mockup short" src="assets/mockup010.svg" alt="Mockup010" />
+      <img class="image-mockup short" src="assets/mockup011.svg" alt="Mockup011" />
+    </section>
+
+    <section>
+      <h2 class="subtle-caption" data-i18n="collection.specsTitle">Spécifications</h2>
+      <div class="spec-grid">
+        <ul>
+          <li data-i18n="collection.spec1">Porcelaine ivoire dense</li>
+          <li data-i18n="collection.spec2">Champ bleu profond uniforme</li>
+          <li data-i18n="collection.spec3">Motif central discret</li>
+          <li data-i18n="collection.spec4">Liseré doré fin périphérique</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="subtle-caption" data-i18n="collection.compositionTitle">
+        Composition du set (18 pièces)
+      </h2>
+      <div class="spec-grid">
+        <ul>
+          <li data-i18n="collection.comp1">6 assiettes plates — 27 cm</li>
+          <li data-i18n="collection.comp2">6 assiettes creuses</li>
+          <li data-i18n="collection.comp3">6 assiettes d’entrée — 21 cm</li>
+        </ul>
+      </div>
+    </section>
+
+    <p class="price-discreet" data-i18n="collection.price">Valeur d’acquisition : 5 400 €</p>
+
+    <div class="actions">
+      <button
+        type="button"
+        data-action="add-repertoire"
+        data-item-id="cercle-premier"
+        data-i18n="collection.add"
+        data-i18n-added="collection.added"
+      >
+        Ajouter au répertoire
+      </button>
+      <a href="acces.html" class="action-secondary" data-i18n="collection.request">
+        Demander l’accès
+      </a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <a href="silence.html" data-i18n="silence.title">Silence</a>
+    <a href="repertoire.html" data-i18n="footer.repertoire">Répertoire</a>
+    <a href="acces.html" data-i18n="footer.access">Accès</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
