@@ -3,14 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Redirecting…</title>
-  <link rel="canonical" href="/fr/informations.html" />
-  <meta http-equiv="refresh" content="0; url=/fr/informations.html" />
-  <script>
-    window.location.replace("/fr/informations.html");
-  </script>
+  <title>Informations — Porcelaine</title>
+  <meta name="description" content="Informations pratiques : livraison, entretien de la porcelaine et service client." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body>
-  <p>Redirecting to <a href="/fr/informations.html">/fr/informations.html</a>.</p>
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/index.html">Porcelaine</a>
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="/index.html">Accueil</a>
+        <a href="/manifesto.html">Manifeste</a>
+        <a href="/set.html">Le set</a>
+        <a href="/repertoire.html">Répertoire <span class="badge" data-cart-count hidden>0</span></a>
+        <a href="/info.html" aria-current="page">Infos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu" class="section">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="/index.html">Accueil</a> / Informations
+      </nav>
+      <h1 class="section-title">Informations pratiques</h1>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <h2>Livraison</h2>
+          <p>Expédition sous 3 à 5 jours ouvrés, avec suivi. Les emballages sont recyclables et conçus pour protéger la porcelaine.</p>
+        </article>
+        <article class="feature-card">
+          <h2>Entretien</h2>
+          <p>Les pièces passent au lave-vaisselle. Pour préserver l'éclat de l'émail, privilégiez un lavage doux.</p>
+        </article>
+        <article class="feature-card">
+          <h2>Service client</h2>
+          <p>Écrivez-nous à <a href="mailto:bonjour@porcelaine.example">bonjour@porcelaine.example</a>. Nous répondons sous 24 h.</p>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Porcelaine © 2024 — Atelier contemporain.</p>
+      <p>Contact : <a href="mailto:bonjour@porcelaine.example">bonjour@porcelaine.example</a></p>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
 </body>
 </html>
