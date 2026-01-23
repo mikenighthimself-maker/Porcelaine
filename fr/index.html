@@ -19,30 +19,19 @@
     <button type="button" data-lang-toggle data-lang="fr" class="active">FR</button>
   </div>
 
-  <div class="video-bg" aria-hidden="true">
-    <!-- Remplacer assets/video/landing.mp4 par la vidéo finale. -->
-    <video
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="metadata"
-      poster="/assets/img/landing-poster.jpg"
-      data-landing-video
-    >
-      <source src="/assets/video/landing.mp4" type="video/mp4" />
-    </video>
-  </div>
-  <div class="video-overlay" aria-hidden="true"></div>
+  <div class="landing-wrapper">
+    <div class="landing-background" aria-hidden="true"></div>
+    <div class="landing-overlay" aria-hidden="true"></div>
 
-  <main class="container landing-content">
-    <p class="text-block">Une maison de porcelaine pour ceux qui lisent la table comme un langage social.</p>
-    <div class="landing-links">
-      <a href="/fr/collections.html">Entrer</a>
-      <a href="/fr/manifeste.html">Manifeste</a>
-      <a href="/fr/informations.html">Informations</a>
-    </div>
-  </main>
+    <main class="container landing-content">
+      <p class="text-block">Une maison de porcelaine pour ceux qui lisent la table comme un langage social.</p>
+      <div class="landing-links">
+        <a href="/fr/collections.html">Entrer</a>
+        <a href="/fr/manifeste.html">Manifeste</a>
+        <a href="/fr/informations.html">Informations</a>
+      </div>
+    </main>
+  </div>
 
   <script src="/assets/js/site.js"></script>
 </body>
