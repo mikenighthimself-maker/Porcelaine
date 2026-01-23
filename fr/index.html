@@ -9,40 +9,39 @@
   <meta property="og:description" content="Une maison de porcelaine pour ceux qui lisent la table comme un langage social." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/assets/img/og.jpg" />
-  <meta property="og:url" content="/fr/index.html" />
+  <meta property="og:url" content="https://porcelaine.github.io/fr/index.html" />
   <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 <body class="landing">
-  <div class="language-toggle" aria-label="Langue">
-    <button type="button" data-lang-toggle data-lang="en">EN</button>
-    <span>|</span>
-    <button type="button" data-lang-toggle data-lang="fr" class="active">FR</button>
-  </div>
-
-  <div class="video-bg" aria-hidden="true">
-    <!-- Remplacer assets/video/landing.mp4 par la vidéo finale. -->
-    <video
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="metadata"
-      poster="/assets/img/landing-poster.jpg"
-      data-landing-video
-    >
-      <source src="/assets/video/landing.mp4" type="video/mp4" />
-    </video>
-  </div>
-  <div class="video-overlay" aria-hidden="true"></div>
-
-  <main class="container landing-content">
-    <p class="text-block">Une maison de porcelaine pour ceux qui lisent la table comme un langage social.</p>
-    <div class="landing-links">
-      <a href="/fr/collections.html">Entrer</a>
-      <a href="/fr/manifeste.html">Manifeste</a>
-      <a href="/fr/informations.html">Informations</a>
+  <nav class="site-nav" aria-label="Primary">
+    <div class="nav-inner">
+      <a class="nav-brand active" href="/fr/index.html">Porcelaine</a>
+      <div class="nav-links">
+        <a class="nav-link" href="/fr/collections.html">Collections</a>
+        <a class="nav-link" href="/fr/manifeste.html">Manifeste</a>
+        <a class="nav-link" href="/fr/informations.html">Informations</a>
+      </div>
+      <div class="nav-lang" aria-label="Langue">
+        <button type="button" data-lang-toggle data-lang="en">EN</button>
+        <span aria-hidden="true">|</span>
+        <button type="button" data-lang-toggle data-lang="fr" class="active">FR</button>
+      </div>
     </div>
-  </main>
+  </nav>
+
+  <div class="landing-wrapper">
+    <div class="landing-background" aria-hidden="true"></div>
+    <div class="landing-overlay" aria-hidden="true"></div>
+
+    <main class="container landing-content">
+      <p class="text-block">Une maison de porcelaine pour ceux qui lisent la table comme un langage social.</p>
+      <div class="landing-links">
+        <a href="/fr/collections.html">Entrer</a>
+        <a href="/fr/manifeste.html">Manifeste</a>
+        <a href="/fr/informations.html">Informations</a>
+      </div>
+    </main>
+  </div>
 
   <script src="/assets/js/site.js"></script>
 </body>
