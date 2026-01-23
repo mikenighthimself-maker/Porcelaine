@@ -13,11 +13,21 @@
   <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 <body>
-  <div class="language-toggle" aria-label="Langue">
-    <button type="button" data-lang-toggle data-lang="en">EN</button>
-    <span>|</span>
-    <button type="button" data-lang-toggle data-lang="fr" class="active">FR</button>
-  </div>
+  <nav class="site-nav" aria-label="Primary">
+    <div class="nav-inner">
+      <a class="nav-brand" href="/fr/index.html">Porcelaine</a>
+      <div class="nav-links">
+        <a class="nav-link" href="/fr/collections.html">Collections</a>
+        <a class="nav-link active" href="/fr/manifeste.html">Manifeste</a>
+        <a class="nav-link" href="/fr/informations.html">Informations</a>
+      </div>
+      <div class="nav-lang" aria-label="Langue">
+        <button type="button" data-lang-toggle data-lang="en">EN</button>
+        <span aria-hidden="true">|</span>
+        <button type="button" data-lang-toggle data-lang="fr" class="active">FR</button>
+      </div>
+    </div>
+  </nav>
 
   <main class="container">
     <h1 class="section-title">Manifeste</h1>
