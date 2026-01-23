@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
-  <rect width="1200" height="800" fill="#e7e1d8" />
-  <rect x="80" y="80" width="1040" height="640" fill="none" stroke="#b49b5b" stroke-width="2" />
-  <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="#8b847a" font-family="Helvetica, Arial, sans-serif" font-size="32" letter-spacing="4">
-    MOCKUP004
-  </text>
-</svg>

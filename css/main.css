@@ -82,6 +82,7 @@ button:focus-visible {
   justify-content: space-between;
   padding: 1rem 0;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .brand {
@@ -104,6 +105,26 @@ button:focus-visible {
 }
 
 .nav-links a[aria-current="page"] {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.nav-lang {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.lang-link {
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+
+.lang-link.active {
   border-color: var(--accent);
   color: var(--accent);
 }
@@ -323,4 +344,34 @@ button:focus-visible {
   color: var(--accent);
   font-size: 0.75rem;
   font-weight: 600;
+}
+
+.language-selector {
+  background: var(--surface);
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.language-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.language-actions .button {
+  min-width: 180px;
+}
+
+.status-code {
+  font-size: clamp(3rem, 8vw, 4rem);
+  margin: 0;
+}
+
+.notice {
+  color: var(--muted);
 }

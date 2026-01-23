@@ -1,7 +1,13 @@
 const CART_KEY = "porcelaineCart";
+const LANG_KEY = "porcelaineLang";
+
+const getLocale = () => {
+  const lang = document.documentElement.lang || "fr";
+  return lang.startsWith("fr") ? "fr-FR" : "en-GB";
+};
 
 const formatPrice = (value) =>
-  new Intl.NumberFormat("fr-FR", {
+  new Intl.NumberFormat(getLocale(), {
     style: "currency",
     currency: "EUR",
   }).format(value);
@@ -22,11 +28,10 @@ const saveCart = (cart) => {
 const updateCartBadge = () => {
   const cart = getCart();
   const count = cart.reduce((total, item) => total + item.quantity, 0);
-  const badge = document.querySelector("[data-cart-count]");
-  if (badge) {
+  document.querySelectorAll("[data-cart-count]").forEach((badge) => {
     badge.textContent = count;
     badge.hidden = count === 0;
-  }
+  });
 };
 
 const addToCart = (item) => {
@@ -68,18 +73,25 @@ const renderCart = () => {
   let total = 0;
   cart.forEach((item) => {
     total += item.price * item.quantity;
+    const fallbackLang = document.documentElement.lang || "fr";
+    const defaultQuantity = fallbackLang.startsWith("fr") ? "Quantité :" : "Quantity:";
+    const defaultUnit = fallbackLang.startsWith("fr") ? "l'unité" : "per item";
+    const defaultRemove = fallbackLang.startsWith("fr") ? "Retirer" : "Remove";
+    const quantityLabel = item.quantityLabel || defaultQuantity;
+    const unitLabel = item.unitLabel || defaultUnit;
+    const removeLabel = item.removeLabel || defaultRemove;
 
     const row = document.createElement("div");
     row.className = "cart-item";
     row.innerHTML = `
       <div>
         <h3>${item.name}</h3>
-        <p class="cart-meta">Quantité : ${item.quantity}</p>
-        <p class="cart-meta">${formatPrice(item.price)} l'unité</p>
+        <p class="cart-meta">${quantityLabel} ${item.quantity}</p>
+        <p class="cart-meta">${formatPrice(item.price)} ${unitLabel}</p>
       </div>
       <div>
         <p class="price">${formatPrice(item.price * item.quantity)}</p>
-        <button class="button secondary" type="button" data-remove="${item.id}">Retirer</button>
+        <button class="button secondary" type="button" data-remove="${item.id}">${removeLabel}</button>
       </div>
     `;
     list.appendChild(row);
@@ -101,12 +113,17 @@ const setupAddToCart = () => {
       id: button.dataset.id,
       name: button.dataset.name,
       price: Number(button.dataset.price),
+      quantityLabel: button.dataset.quantityLabel,
+      unitLabel: button.dataset.unitLabel,
+      removeLabel: button.dataset.removeLabel,
     };
     addToCart(item);
-    button.textContent = "Ajouté au répertoire";
+    const addedLabel = button.dataset.addedLabel || button.textContent;
+    const defaultLabel = button.dataset.defaultLabel || button.textContent;
+    button.textContent = addedLabel;
     button.disabled = true;
     setTimeout(() => {
-      button.textContent = "Ajouter au répertoire";
+      button.textContent = defaultLabel;
       button.disabled = false;
     }, 1800);
   });
@@ -134,9 +151,51 @@ const setupModal = () => {
   });
 };
 
+const getNavigatorLang = () =>
+  navigator.language && navigator.language.toLowerCase().startsWith("fr") ? "fr" : "en";
+
+const getStoredLang = () => localStorage.getItem(LANG_KEY);
+
+const setStoredLang = (lang) => {
+  localStorage.setItem(LANG_KEY, lang);
+};
+
+const setupLangPersistence = () => {
+  document.querySelectorAll("[data-lang]").forEach((link) => {
+    link.addEventListener("click", () => {
+      setStoredLang(link.dataset.lang);
+    });
+  });
+};
+
+const persistCurrentLang = () => {
+  const path = window.location.pathname;
+  if (path.startsWith("/fr/")) {
+    setStoredLang("fr");
+  } else if (path.startsWith("/en/")) {
+    setStoredLang("en");
+  }
+};
+
+const handleRootRedirect = () => {
+  const path = window.location.pathname;
+  const isRoot = path === "/" || path.endsWith("/index.html");
+  const isLocalized = path.startsWith("/fr/") || path.startsWith("/en/");
+  if (!isRoot || isLocalized) return;
+  if (!document.body.dataset.langRedirect) return;
+
+  const stored = getStoredLang();
+  if (!stored) return;
+  const target = stored === "fr" ? "/fr/index.html" : "/en/index.html";
+  window.location.replace(target);
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   updateCartBadge();
   setupAddToCart();
   renderCart();
   setupModal();
+  setupLangPersistence();
+  persistCurrentLang();
+  handleRootRedirect();
 });

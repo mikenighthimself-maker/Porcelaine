@@ -1,48 +1,89 @@
 <!DOCTYPE html>
-<html lang="fr" class="landing-page">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Porcelaine</title>
-  <meta name="description" content="Une maison de porcelaine pour ceux qui lisent la table comme un langage social." />
-  <meta property="og:title" content="Porcelaine" />
-  <meta property="og:description" content="Une maison de porcelaine pour ceux qui lisent la table comme un langage social." />
+  <title>Porcelaine — Atelier contemporain</title>
+  <meta name="description" content="Porcelaine, un atelier contemporain qui célèbre des pièces artisanales, intemporelles et fabriquées en France." />
+  <link rel="canonical" href="https://porcelaine.github.io/fr/index.html" />
+  <link rel="alternate" hreflang="fr" href="https://porcelaine.github.io/fr/index.html" />
+  <link rel="alternate" hreflang="en" href="https://porcelaine.github.io/en/index.html" />
+  <link rel="alternate" hreflang="x-default" href="https://porcelaine.github.io/" />
+  <meta property="og:title" content="Porcelaine — Atelier contemporain" />
+  <meta property="og:description" content="Porcelaine, un atelier contemporain qui célèbre des pièces artisanales, intemporelles et fabriquées en France." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="/assets/img/og.jpg" />
   <meta property="og:url" content="https://porcelaine.github.io/fr/index.html" />
-  <link rel="stylesheet" href="/assets/css/style.css" />
+  <meta property="og:image" content="https://porcelaine.github.io/assets/img/og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Porcelaine — Atelier contemporain" />
+  <meta name="twitter:description" content="Porcelaine, un atelier contemporain qui célèbre des pièces artisanales, intemporelles et fabriquées en France." />
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <script defer src="/js/main.js"></script>
 </head>
-<body class="landing">
-  <nav class="site-nav" aria-label="Primary">
-    <div class="nav-inner">
-      <a class="nav-brand active" href="/fr/index.html">Home</a>
-      <div class="nav-links">
-        <a class="nav-link" href="/fr/collections.html">Collections</a>
-        <a class="nav-link" href="/fr/manifeste.html">Manifeste</a>
-        <a class="nav-link" href="/fr/informations.html">Informations</a>
-      </div>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/fr/index.html">Porcelaine</a>
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="/fr/index.html" aria-current="page">Accueil</a>
+        <a href="/fr/manifesto.html">Manifeste</a>
+        <a href="/fr/collections.html">Collections</a>
+        <a href="/fr/repertoire.html">Répertoire <span class="badge" data-cart-count hidden>0</span></a>
+        <a href="/fr/info.html">Informations</a>
+      </nav>
       <div class="nav-lang" aria-label="Langue">
-        <button type="button" data-lang-toggle data-lang="en">EN</button>
+        <a class="lang-link active" href="/fr/index.html" data-lang="fr">FR</a>
         <span aria-hidden="true">|</span>
-        <button type="button" data-lang-toggle data-lang="fr" class="active">FR</button>
+        <a class="lang-link" href="/en/index.html" data-lang="en">EN</a>
       </div>
     </div>
-  </nav>
+  </header>
 
-  <div class="landing-wrapper">
-    <div class="landing-background" aria-hidden="true"></div>
-    <div class="landing-overlay" aria-hidden="true"></div>
-
-    <main class="container landing-content">
-      <p class="text-block">Une maison de porcelaine pour ceux qui lisent la table comme un langage social.</p>
-      <div class="landing-links">
-        <a href="/fr/collections.html">Entrer</a>
-        <a href="/fr/manifeste.html">Manifeste</a>
-        <a href="/fr/informations.html">Informations</a>
+  <main id="contenu">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-card">
+          <p class="badge">Nouvelle collection</p>
+          <h1>Des services en porcelaine pour les rituels du quotidien.</h1>
+          <p>Porcelaine imagine des pièces élégantes, adaptées à vos moments de calme. Chaque collection est façonnée à la main, avec des finitions minérales et un émail doux au toucher.</p>
+          <div>
+            <a class="button" href="/fr/collections.html">Découvrir la collection</a>
+            <a class="button secondary" href="/fr/manifesto.html">Lire notre manifeste</a>
+          </div>
+        </div>
+        <img src="/assets/img/hero-porcelaine.jpg" alt="Table lumineuse avec des pièces de porcelaine artisanales." loading="lazy" />
       </div>
-    </main>
-  </div>
+    </section>
 
-  <script src="/assets/js/site.js"></script>
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Pourquoi Porcelaine ?</h2>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>Fabrication locale</h3>
+            <p>Chaque collection est réalisée en France dans un atelier familial, avec un contrôle rigoureux de la qualité.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Édition limitée</h3>
+            <p>Nous produisons en petites séries afin de préserver la singularité de chaque pièce.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Matériaux durables</h3>
+            <p>Les argiles et émaux sont sélectionnés pour leur résistance et leur faible impact environnemental.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Porcelaine © 2024 — Atelier contemporain.</p>
+      <p>Contact : <a href="mailto:bonjour@porcelaine.example">bonjour@porcelaine.example</a></p>
+    </div>
+  </footer>
 </body>
 </html>
