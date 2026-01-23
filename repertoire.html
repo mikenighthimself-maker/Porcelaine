@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Répertoire — Maison Andresi</title>
+  <title>Votre répertoire — Porcelaine</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -13,64 +13,39 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="brand" data-i18n="nav.brand">Maison Andresi</div>
-    <nav class="site-nav" aria-label="Navigation principale">
-      <a href="set.html" data-i18n="nav.collection">Collection</a>
-      <a href="repertoire.html" data-i18n="nav.repertoire">Répertoire</a>
-      <a href="acces.html" data-i18n="nav.access">Accès</a>
-      <a href="info.html" data-i18n="nav.info">Information</a>
-      <div class="language-switch" aria-label="Langue">
-        <button type="button" data-lang="fr">FR</button>
-        <span>/</span>
-        <button type="button" data-lang="en">EN</button>
-      </div>
-    </nav>
-  </header>
-
   <main class="container">
-    <h1 class="section-title" data-i18n="repertoire.title">Répertoire</h1>
+    <h1 class="section-title">Votre répertoire</h1>
 
-    <div data-repertoire-empty hidden>
-      <p class="subtle-caption" data-i18n="repertoire.empty">
-        Aucun élément n’est encore enregistré.
-      </p>
-      <a href="set.html" class="action-secondary" data-i18n="repertoire.back">
-        Retour à la collection
-      </a>
-    </div>
+    <p class="metadata" data-repertoire-empty hidden>
+      Aucun élément n’est encore enregistré.
+    </p>
 
-    <section class="repertoire-item" data-repertoire-item>
-      <h2 class="repertoire-title" data-i18n="repertoire.itemTitle">
-        Cercle Premier — Set 18 pièces
-      </h2>
-      <p class="repertoire-description" data-i18n="repertoire.itemDescription">
-        Ensemble complet destiné à six convives. Trois formes. Un langage.
+    <section class="repertoire-item">
+      <h2 class="repertoire-title" data-repertoire-title>Set de réception, 18 pièces</h2>
+      <p class="repertoire-description" data-repertoire-description>
+        Ensemble clos destiné à six convives. Trois formes. Un langage.
       </p>
-      <button type="button" data-action="remove-repertoire" data-i18n="repertoire.remove">
-        Retirer
-      </button>
     </section>
 
-    <div class="price-block" data-repertoire-price>
-      <span class="price-label" data-i18n="repertoire.priceLabel">Valeur d’acquisition</span>
-      <span class="price-value" data-i18n="repertoire.priceValue">5 400 €</span>
-    </div>
+    <section class="value-block">
+      <div class="label">Valeur d’acquisition</div>
+      <div class="value">5 400 €</div>
+      <div class="detail">Pour l’ensemble de 18 pièces</div>
+      <p class="footnote">
+        Cette valeur inclut l’ensemble des dix-huit pièces constituant le set de réception.
+      </p>
+    </section>
 
-    <div class="actions" data-repertoire-actions>
-      <a href="acces.html" class="action-secondary" data-i18n="repertoire.request">
-        Demander l’accès
-      </a>
+    <div class="centered-action">
+      <button type="button">Finaliser l’acquisition</button>
     </div>
   </main>
 
   <footer class="footer">
-    <a href="manifesto.html" data-i18n="manifesto.title">Silence</a>
-    <a href="set.html" data-i18n="nav.collection">Collection</a>
-    <a href="acces.html" data-i18n="nav.access">Accès</a>
-    <a href="info.html" data-i18n="nav.info">Information</a>
+    <a href="set.html">Retour au set</a>
+    <a href="info.html">Information</a>
   </footer>
 
-  <script src="i18n.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

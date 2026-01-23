@@ -1,4 +1,4 @@
-const LANGUAGE_KEY = "lang";
+const LANGUAGE_KEY = "maison_andresi_lang";
 const REPERTOIRE_KEY = "maison_andresi_repertoire";
 
 const translations = {
@@ -122,30 +122,14 @@ const translations = {
   },
 };
 
-const getQueryLang = () => {
-  const params = new URLSearchParams(window.location.search);
-  const lang = params.get("lang");
-  return lang && translations[lang] ? lang : null;
-};
-
-const getNavigatorLang = () =>
-  navigator.language && navigator.language.toLowerCase().startsWith("fr") ? "fr" : "en";
-
-const resolveLanguage = () =>
-  localStorage.getItem(LANGUAGE_KEY) || getQueryLang() || getNavigatorLang() || "en";
+const getStoredLanguage = () => localStorage.getItem(LANGUAGE_KEY) || "fr";
 
 const setStoredLanguage = (lang) => {
   localStorage.setItem(LANGUAGE_KEY, lang);
 };
 
-const updateUrlLanguage = (lang) => {
-  const url = new URL(window.location.href);
-  url.searchParams.set("lang", lang);
-  window.history.replaceState({}, "", url.toString());
-};
-
 const applyTranslations = (lang) => {
-  const dictionary = translations[lang] || translations.en;
+  const dictionary = translations[lang] || translations.fr;
   document.documentElement.lang = lang;
 
   document.querySelectorAll("[data-i18n]").forEach((el) => {
@@ -169,28 +153,10 @@ const updateLanguageSwitcher = (lang) => {
   });
 };
 
-const updateLinks = (lang) => {
-  document.querySelectorAll("a[href]").forEach((link) => {
-    const href = link.getAttribute("href");
-    if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) {
-      return;
-    }
-    if (href.startsWith("http://") || href.startsWith("https://")) {
-      return;
-    }
-    const url = new URL(href, window.location.origin);
-    url.searchParams.set("lang", lang);
-    link.setAttribute("href", `${url.pathname}${url.search}${url.hash}`);
-  });
-};
-
 const initLanguage = () => {
-  const initialLang = resolveLanguage();
-  setStoredLanguage(initialLang);
+  const initialLang = getStoredLanguage();
   applyTranslations(initialLang);
   updateLanguageSwitcher(initialLang);
-  updateLinks(initialLang);
-  updateUrlLanguage(initialLang);
 
   document.querySelectorAll("[data-lang]").forEach((button) => {
     button.addEventListener("click", () => {
@@ -198,8 +164,6 @@ const initLanguage = () => {
       setStoredLanguage(lang);
       applyTranslations(lang);
       updateLanguageSwitcher(lang);
-      updateLinks(lang);
-      updateUrlLanguage(lang);
       updateButtonState();
       updateRepertoireView();
     });
@@ -227,8 +191,8 @@ const updateButtonState = () => {
   const addButton = document.querySelector("[data-action='add-repertoire']");
   if (!addButton) return;
 
-  const lang = resolveLanguage();
-  const dictionary = translations[lang] || translations.en;
+  const lang = getStoredLanguage();
+  const dictionary = translations[lang] || translations.fr;
   const itemId = addButton.dataset.itemId;
   const items = getRepertoire();
   const isAdded = items.includes(itemId);
@@ -293,21 +257,8 @@ const initRepertoirePage = () => {
   }
 };
 
-const handleReducedMotion = () => {
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  if (!prefersReducedMotion.matches) return;
-
-  document.documentElement.classList.add("reduced-motion");
-  const landingVideo = document.querySelector("[data-landing-video]");
-  if (landingVideo) {
-    landingVideo.pause();
-    landingVideo.removeAttribute("autoplay");
-  }
-};
-
 document.addEventListener("DOMContentLoaded", () => {
   initLanguage();
   initCollectionPage();
   initRepertoirePage();
-  handleReducedMotion();
 });
