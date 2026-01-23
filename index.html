@@ -1,73 +1,35 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Porcelaine — Atelier contemporain</title>
-  <meta name="description" content="Porcelaine, un atelier contemporain qui célèbre des pièces artisanales, intemporelles et fabriquées en France." />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="/css/styles.css" />
+  <title>Porcelaine — Select your language</title>
+  <meta name="description" content="Select your language to explore the Porcelaine atelier." />
+  <link rel="canonical" href="https://porcelaine.github.io/" />
+  <meta property="og:title" content="Porcelaine" />
+  <meta property="og:description" content="Select your language to explore the Porcelaine atelier." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://porcelaine.github.io/" />
+  <meta property="og:image" content="https://porcelaine.github.io/assets/img/og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Porcelaine" />
+  <meta name="twitter:description" content="Select your language to explore the Porcelaine atelier." />
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <script defer src="/js/main.js"></script>
 </head>
-<body>
-  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
-
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="/index.html">Porcelaine</a>
-      <nav class="nav-links" aria-label="Navigation principale">
-        <a href="/index.html" aria-current="page">Accueil</a>
-        <a href="/manifesto.html">Manifeste</a>
-        <a href="/set.html">Le set</a>
-        <a href="/repertoire.html">Répertoire <span class="badge" data-cart-count hidden>0</span></a>
-        <a href="/info.html">Infos</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="contenu">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-card">
-          <p class="badge">Nouvelle collection</p>
-          <h1>Des services en porcelaine pour les rituels du quotidien.</h1>
-          <p>Porcelaine imagine des pièces élégantes, adaptées à vos moments de calme. Chaque set est façonné à la main, avec des finitions minérales et un émail doux au toucher.</p>
-          <div>
-            <a class="button" href="/set.html">Découvrir le set</a>
-            <a class="button secondary" href="/manifesto.html">Lire notre manifeste</a>
-          </div>
-        </div>
-        <img src="/images/hero-porcelaine.jpg" alt="Table lumineuse avec des pièces de porcelaine artisanales." loading="lazy" />
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Pourquoi Porcelaine ?</h2>
-        <div class="feature-grid">
-          <article class="feature-card">
-            <h3>Fabrication locale</h3>
-            <p>Chaque set est réalisé en France dans un atelier familial, avec un contrôle rigoureux de la qualité.</p>
-          </article>
-          <article class="feature-card">
-            <h3>Édition limitée</h3>
-            <p>Nous produisons en petites séries afin de préserver la singularité de chaque pièce.</p>
-          </article>
-          <article class="feature-card">
-            <h3>Matériaux durables</h3>
-            <p>Les argiles et émaux sont sélectionnés pour leur résistance et leur faible impact environnemental.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
+<body data-lang-redirect="true">
+  <main class="section">
     <div class="container">
-      <p>Porcelaine © 2024 — Atelier contemporain.</p>
-      <p>Contact : <a href="mailto:bonjour@porcelaine.example">bonjour@porcelaine.example</a></p>
+      <div class="language-selector">
+        <h1 class="section-title">Porcelaine</h1>
+        <p class="notice">Choisissez votre langue · Choose your language</p>
+        <div class="language-actions">
+          <a class="button" href="/fr/index.html" data-lang="fr">Français</a>
+          <a class="button secondary" href="/en/index.html" data-lang="en">English</a>
+        </div>
+      </div>
     </div>
-  </footer>
-
-  <script src="/js/app.js"></script>
+  </main>
 </body>
 </html>
