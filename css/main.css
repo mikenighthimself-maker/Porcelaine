@@ -133,11 +133,26 @@ button:focus-visible {
   padding: 3rem 0 4rem;
 }
 
+.hero--full {
+  min-height: calc(100svh - 120px);
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+}
+
 .hero-grid {
   display: grid;
   gap: 2.5rem;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   align-items: center;
+}
+
+.hero-image {
+  width: 100%;
+  max-height: min(60vh, 520px);
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 .hero-card {
@@ -254,6 +269,20 @@ button:focus-visible {
   }
   .product-details {
     position: static;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero--full {
+    min-height: calc(100svh - 180px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
   }
 }
 

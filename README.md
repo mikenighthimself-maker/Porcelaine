@@ -25,16 +25,16 @@ PLAN NETTOYAGE (inventaire)
     main.js
   fr/
     index.html
-    manifesto.html
+    manifeste.html
     collections.html
     repertoire.html
-    info.html
+    informations.html
   en/
     index.html
     manifesto.html
     collections.html
     repertoire.html
-    info.html
+    information.html
   README.md
 ```
 
@@ -44,7 +44,7 @@ PLAN NETTOYAGE (inventaire)
 - Les pages EN vivent sous `/en/`.
 
 ## Domaine pour les canoniques
-Les URLs canoniques et le sitemap utilisent `https://porcelaine.github.io`.
+Les URLs canoniques et le sitemap utilisent `https://mikenighthimself-maker.github.io/Porcelaine/`.
 Si votre domaine GitHub Pages est différent, remplacez-le dans :
 - `index.html`, `404.html`
 - toutes les pages `/fr/*.html` et `/en/*.html`
