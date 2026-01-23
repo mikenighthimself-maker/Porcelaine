@@ -3,14 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Redirecting…</title>
-  <link rel="canonical" href="/fr/collections.html" />
-  <meta http-equiv="refresh" content="0; url=/fr/collections.html" />
-  <script>
-    window.location.replace("/fr/collections.html");
-  </script>
+  <title>Répertoire — Porcelaine</title>
+  <meta name="description" content="Consultez votre répertoire, ajustez vos quantités et finalisez votre demande d'acquisition." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body>
-  <p>Redirecting to <a href="/fr/collections.html">/fr/collections.html</a>.</p>
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/index.html">Porcelaine</a>
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="/index.html">Accueil</a>
+        <a href="/manifesto.html">Manifeste</a>
+        <a href="/set.html">Le set</a>
+        <a href="/repertoire.html" aria-current="page">Répertoire <span class="badge" data-cart-count hidden>0</span></a>
+        <a href="/info.html">Infos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu" class="section">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="/index.html">Accueil</a> / Répertoire
+      </nav>
+      <h1 class="section-title">Votre répertoire</h1>
+      <div class="cart-layout">
+        <div>
+          <p data-cart-empty>Votre répertoire est vide pour le moment.</p>
+          <div class="cart-list" data-cart-list></div>
+        </div>
+        <aside class="cart-summary">
+          <h2>Récapitulatif</h2>
+          <p>Total</p>
+          <p class="price" data-cart-total>0 €</p>
+          <button class="button" type="button" data-open-modal>Finaliser l'acquisition</button>
+          <p class="cart-meta">Un conseiller Porcelaine confirmera votre commande par e-mail.</p>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <div class="modal" aria-hidden="true" role="dialog" aria-modal="true" data-modal>
+    <div class="modal-content">
+      <h2>Merci !</h2>
+      <p>Votre demande a bien été enregistrée. Nous reviendrons vers vous par e-mail pour finaliser la commande.</p>
+      <button class="button" type="button" data-close-modal>Fermer</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Porcelaine © 2024 — Atelier contemporain.</p>
+      <p>Contact : <a href="mailto:bonjour@porcelaine.example">bonjour@porcelaine.example</a></p>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
 </body>
 </html>

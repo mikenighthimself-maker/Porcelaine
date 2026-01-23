@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://porcelaine.example/index.html</loc>
+  </url>
+  <url>
+    <loc>https://porcelaine.example/manifesto.html</loc>
+  </url>
+  <url>
+    <loc>https://porcelaine.example/set.html</loc>
+  </url>
+  <url>
+    <loc>https://porcelaine.example/repertoire.html</loc>
+  </url>
+  <url>
+    <loc>https://porcelaine.example/info.html</loc>
+  </url>
+</urlset>
