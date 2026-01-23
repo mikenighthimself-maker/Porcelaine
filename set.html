@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cercle Premier — Maison Andresi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@300;400&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand" data-i18n="nav.brand">Maison Andresi</div>
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="set.html" data-i18n="nav.collection">Collection</a>
+      <a href="repertoire.html" data-i18n="nav.repertoire">Répertoire</a>
+      <a href="acces.html" data-i18n="nav.access">Accès</a>
+      <a href="info.html" data-i18n="nav.info">Information</a>
+      <div class="language-switch" aria-label="Langue">
+        <button type="button" data-lang="fr">FR</button>
+        <span>/</span>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1 class="section-title" data-i18n="set.title">Cercle Premier — Set 18 pièces</h1>
+    <p class="subtle-caption" data-i18n="set.subtitle">
+      Porcelaine ivoire, champ bleu profond, liseré doré fin.
+    </p>
+
+    <section class="gallery-grid three-columns">
+      <img class="image-mockup short" src="assets/mockup006.svg" alt="Mockup006" />
+      <img class="image-mockup short" src="assets/mockup007.svg" alt="Mockup007" />
+      <img class="image-mockup short" src="assets/mockup008.svg" alt="Mockup008" />
+      <img class="image-mockup short" src="assets/mockup009.svg" alt="Mockup009" />
+      <img class="image-mockup short" src="assets/mockup010.svg" alt="Mockup010" />
+      <img class="image-mockup short" src="assets/mockup011.svg" alt="Mockup011" />
+    </section>
+
+    <section>
+      <h2 class="subtle-caption" data-i18n="set.specsTitle">Spécifications</h2>
+      <div class="spec-grid">
+        <ul>
+          <li data-i18n="set.spec1">Porcelaine ivoire dense</li>
+          <li data-i18n="set.spec2">Champ bleu profond uniforme</li>
+          <li data-i18n="set.spec3">Motif central discret</li>
+          <li data-i18n="set.spec4">Liseré doré fin périphérique</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="subtle-caption" data-i18n="set.compositionTitle">
+        Composition du set (18 pièces)
+      </h2>
+      <div class="spec-grid">
+        <ul>
+          <li data-i18n="set.comp1">6 assiettes plates — 27 cm</li>
+          <li data-i18n="set.comp2">6 assiettes creuses</li>
+          <li data-i18n="set.comp3">6 assiettes d’entrée — 21 cm</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="price-block">
+      <span class="price-label" data-i18n="set.priceLabel">Valeur d’acquisition</span>
+      <span class="price-value" data-i18n="set.priceValue">5 400 €</span>
+    </div>
+
+    <div class="actions">
+      <button
+        type="button"
+        data-action="add-repertoire"
+        data-item-id="cercle-premier"
+        data-i18n="set.add"
+        data-i18n-added="set.added"
+      >
+        Ajouter au répertoire
+      </button>
+      <a href="acces.html" class="action-secondary" data-i18n="set.request">
+        Demander l’accès
+      </a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <a href="manifesto.html" data-i18n="manifesto.title">Silence</a>
+    <a href="repertoire.html" data-i18n="nav.repertoire">Répertoire</a>
+    <a href="acces.html" data-i18n="nav.access">Accès</a>
+    <a href="info.html" data-i18n="nav.info">Information</a>
+  </footer>
+
+  <script src="i18n.js"></script>
+</body>
+</html>

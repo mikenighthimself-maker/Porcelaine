@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maison Andresi — Silence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@300;400&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand" data-i18n="nav.brand">Maison Andresi</div>
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="set.html" data-i18n="nav.collection">Collection</a>
+      <a href="repertoire.html" data-i18n="nav.repertoire">Répertoire</a>
+      <a href="acces.html" data-i18n="nav.access">Accès</a>
+      <a href="info.html" data-i18n="nav.info">Information</a>
+      <div class="language-switch" aria-label="Langue">
+        <button type="button" data-lang="fr">FR</button>
+        <span>/</span>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1 class="section-title" data-i18n="manifesto.title">Silence</h1>
+
+    <section class="gallery-grid two-columns">
+      <img class="image-mockup tall" src="assets/mockup004.svg" alt="Mockup004" />
+      <img class="image-mockup medium" src="assets/mockup005.svg" alt="Mockup005" />
+    </section>
+
+    <p class="manifesto-text" data-i18n="manifesto.text">
+      Quelques pièces suffisent à instaurer le rythme.
+      Le reste relève du regard.
+    </p>
+
+    <div class="actions">
+      <a href="set.html" class="action-secondary" data-i18n="manifesto.link">Collection</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <a href="set.html" data-i18n="nav.collection">Collection</a>
+    <a href="repertoire.html" data-i18n="nav.repertoire">Répertoire</a>
+    <a href="acces.html" data-i18n="nav.access">Accès</a>
+    <a href="info.html" data-i18n="nav.info">Information</a>
+  </footer>
+
+  <script src="i18n.js"></script>
+</body>
+</html>
