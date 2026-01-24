@@ -1,5 +1,6 @@
 const CART_KEY = "porcelaineCart";
 const LANG_KEY = "porcelaineLang";
+const REQUEST_QUANTITY_KEY = "porcelaineRequestQuantity";
 
 const getLocale = () => {
   const lang = document.documentElement.lang || "fr";
@@ -38,12 +39,15 @@ const addToCart = (item) => {
   const cart = getCart();
   const existing = cart.find((entry) => entry.id === item.id);
   if (existing) {
-    existing.quantity += 1;
+    existing.quantity = 1;
   } else {
     cart.push({ ...item, quantity: 1 });
   }
   saveCart(cart);
   updateCartBadge();
+  if (item.announceMessage) {
+    announce(item.announceMessage);
+  }
 };
 
 const removeFromCart = (id) => {
@@ -116,10 +120,11 @@ const setupAddToCart = () => {
       quantityLabel: button.dataset.quantityLabel,
       unitLabel: button.dataset.unitLabel,
       removeLabel: button.dataset.removeLabel,
+      announceMessage: button.dataset.announce,
     };
     addToCart(item);
-    const addedLabel = button.dataset.addedLabel || button.textContent;
     const defaultLabel = button.dataset.defaultLabel || button.textContent;
+    const addedLabel = button.dataset.addedLabel || button.textContent;
     button.textContent = addedLabel;
     button.disabled = true;
     setTimeout(() => {
@@ -130,24 +135,101 @@ const setupAddToCart = () => {
 };
 
 const setupModal = () => {
-  const openButton = document.querySelector("[data-open-modal]");
   const modal = document.querySelector("[data-modal]");
   const closeButton = document.querySelector("[data-close-modal]");
-  if (!openButton || !modal || !closeButton) return;
+  if (!modal || !closeButton) return;
 
   const closeModal = () => {
     modal.setAttribute("aria-hidden", "true");
+    modal.classList.remove("is-open");
   };
 
-  openButton.addEventListener("click", () => {
+  const openModal = () => {
     modal.setAttribute("aria-hidden", "false");
-  });
+    modal.classList.add("is-open");
+  };
+
+  modal._openModal = openModal;
 
   closeButton.addEventListener("click", closeModal);
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && modal.getAttribute("aria-hidden") === "false") {
+      closeModal();
+    }
+  });
   modal.addEventListener("click", (event) => {
     if (event.target === modal) {
       closeModal();
     }
+  });
+};
+
+const announce = (message) => {
+  const region = document.querySelector("[data-live-region]");
+  if (!region || !message) return;
+  region.textContent = "";
+  setTimeout(() => {
+    region.textContent = message;
+  }, 50);
+};
+
+const setupRequestForm = () => {
+  const form = document.querySelector("[data-request-form]");
+  if (!form) return;
+  const quantityInput = form.querySelector("[data-request-quantity]");
+  const storedQuantity = localStorage.getItem(REQUEST_QUANTITY_KEY);
+  if (quantityInput) {
+    quantityInput.value = storedQuantity || quantityInput.value || "1";
+    if (!storedQuantity) {
+      localStorage.setItem(REQUEST_QUANTITY_KEY, quantityInput.value);
+    }
+    quantityInput.addEventListener("change", () => {
+      localStorage.setItem(REQUEST_QUANTITY_KEY, quantityInput.value);
+    });
+  }
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    if (quantityInput) {
+      localStorage.setItem(REQUEST_QUANTITY_KEY, quantityInput.value);
+    }
+    const modal = document.querySelector("[data-modal]");
+    const openModal = modal?._openModal;
+    if (typeof openModal === "function") {
+      openModal();
+    } else if (modal) {
+      modal.setAttribute("aria-hidden", "false");
+      modal.classList.add("is-open");
+    }
+    announce(form.dataset.confirmation);
+    form.reset();
+    if (quantityInput) {
+      quantityInput.value = localStorage.getItem(REQUEST_QUANTITY_KEY) || "1";
+    }
+  });
+};
+
+const setupMobileNav = () => {
+  const toggle = document.querySelector("[data-nav-toggle]");
+  const nav = document.querySelector("[data-nav-links]");
+  if (!toggle || !nav) return;
+
+  toggle.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("is-open");
+    toggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (nav.classList.contains("is-open")) {
+        nav.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+      }
+    });
   });
 };
 
@@ -212,6 +294,8 @@ document.addEventListener("DOMContentLoaded", () => {
   setupAddToCart();
   renderCart();
   setupModal();
+  setupRequestForm();
+  setupMobileNav();
   setupLangPersistence();
   persistCurrentLang();
   handleRootRedirect();
