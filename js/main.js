@@ -123,14 +123,9 @@ const setupAddToCart = () => {
       announceMessage: button.dataset.announce,
     };
     addToCart(item);
-    const defaultLabel = button.dataset.defaultLabel || button.textContent;
     const addedLabel = button.dataset.addedLabel || button.textContent;
     button.textContent = addedLabel;
     button.disabled = true;
-    setTimeout(() => {
-      button.textContent = defaultLabel;
-      button.disabled = false;
-    }, 1800);
   });
 };
 
