@@ -5,7 +5,7 @@
   --surface: #ffffff;
   --text: #1b1b1b;
   --muted: #5f5b57;
-  --accent: #1f3b3a;
+  --accent: #123332;
   --accent-light: #d9e5e2;
   --border: #ded6ce;
   --focus: #ffb347;
@@ -46,7 +46,10 @@ a:hover {
 }
 
 a:focus-visible,
-button:focus-visible {
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 3px;
 }
@@ -105,6 +108,45 @@ button:focus-visible {
   letter-spacing: 0.02em;
 }
 
+.nav-toggle {
+  display: none;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  font-family: var(--font-secondary);
+  font-size: 0.85rem;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.nav-toggle span {
+  display: inline-block;
+  width: 18px;
+  height: 2px;
+  background: var(--text);
+  position: relative;
+}
+
+.nav-toggle span::before,
+.nav-toggle span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 18px;
+  height: 2px;
+  background: var(--text);
+}
+
+.nav-toggle span::before {
+  top: -6px;
+}
+
+.nav-toggle span::after {
+  top: 6px;
+}
+
 .nav-links a {
   padding-bottom: 0.2rem;
   border-bottom: 2px solid transparent;
@@ -157,11 +199,8 @@ button:focus-visible {
 
 .home .hero--full {
   min-height: 100vh;
-  padding: 0;
-  background-image: url("../assets/img/hero_1920x1080.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  padding: 2rem 0;
+  background: linear-gradient(180deg, rgba(247, 243, 239, 0.9), rgba(247, 243, 239, 0.65));
 }
 
 .home .hero-grid {
@@ -177,6 +216,10 @@ button:focus-visible {
   align-items: center;
 }
 
+.hero-grid .breadcrumb {
+  grid-column: 1 / -1;
+  margin-top: 0;
+}
 .hero-image {
   width: 100%;
   max-height: min(60vh, 520px);
@@ -310,8 +353,64 @@ h6 {
   grid-template-columns: minmax(0, 1fr) 280px;
 }
 
+.request-layout {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  align-items: start;
+}
+
+.form-grid {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.form-row {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-family: var(--font-secondary);
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.form-help {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0.35rem 0 0;
+}
+
+.checkbox-field {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.checkbox-field input {
+  width: auto;
+}
+
 @media (max-width: 880px) {
   .cart-layout {
+    grid-template-columns: 1fr;
+  }
+  .request-layout {
     grid-template-columns: 1fr;
   }
   .product-details {
@@ -322,6 +421,23 @@ h6 {
 @media (max-width: 720px) {
   .hero--full {
     min-height: calc(100svh - 180px);
+  }
+  .header-inner {
+    align-items: flex-start;
+  }
+  .nav-toggle {
+    display: inline-flex;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 1rem 0 0;
+    border-top: 1px solid var(--border);
+  }
+  .nav-links.is-open {
+    display: flex;
   }
 }
 
@@ -380,6 +496,14 @@ h6 {
 .footer a {
   color: inherit;
   text-decoration: underline;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0 0;
+  font-size: 0.9rem;
 }
 
 .modal {
@@ -454,4 +578,16 @@ h6 {
 
 .notice {
   color: var(--muted);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

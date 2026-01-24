@@ -4,35 +4,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Repertoire — Porcelaine</title>
-  <meta name="description" content="Review your repertoire, adjust quantities, and submit your acquisition request." />
+  <meta name="description" content="Review your repertoire and send an acquisition request for Porcelaine services." />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
   <link rel="canonical" href="https://mikenighthimself-maker.github.io/Porcelaine/en/repertoire.html" />
   <link rel="alternate" hreflang="fr" href="https://mikenighthimself-maker.github.io/Porcelaine/fr/repertoire.html" />
   <link rel="alternate" hreflang="en" href="https://mikenighthimself-maker.github.io/Porcelaine/en/repertoire.html" />
   <link rel="alternate" hreflang="x-default" href="https://mikenighthimself-maker.github.io/Porcelaine/" />
   <meta property="og:title" content="Repertoire — Porcelaine" />
-  <meta property="og:description" content="Review your repertoire, adjust quantities, and submit your acquisition request." />
+  <meta property="og:description" content="Review your repertoire and send an acquisition request for Porcelaine services." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mikenighthimself-maker.github.io/Porcelaine/en/repertoire.html" />
   <meta property="og:image" content="https://mikenighthimself-maker.github.io/Porcelaine/assets/img/og.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Repertoire — Porcelaine" />
-  <meta name="twitter:description" content="Review your repertoire, adjust quantities, and submit your acquisition request." />
+  <meta name="twitter:description" content="Review your repertoire and send an acquisition request for Porcelaine services." />
   <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="../css/main.css" />
   <script defer src="../js/main.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#content">Skip to main content</a>
+  <div class="sr-only" aria-live="polite" aria-atomic="true" data-live-region></div>
 
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html">Porcelaine</a>
-      <nav class="nav-links" aria-label="Primary">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
+        <span aria-hidden="true"></span>
+        <span class="sr-only">Menu</span>
+      </button>
+      <nav class="nav-links" id="primary-navigation" aria-label="Primary" data-nav-links>
         <a href="index.html">Home</a>
         <a href="manifesto.html">Manifesto</a>
         <a href="collections.html">Collections</a>
         <a href="repertoire.html" aria-current="page">Repertoire <span class="badge" data-cart-count hidden>0</span></a>
-        <a href="information.html">Information</a>
+        <a href="informations.html">Information</a>
       </nav>
       <div class="nav-lang" aria-label="Language">
         <a class="lang-link" href="../fr/repertoire.html" data-lang="fr">FR</a>
@@ -48,17 +58,70 @@
         <a href="index.html">Home</a> / Repertoire
       </nav>
       <h1 class="section-title">Your repertoire</h1>
-      <div class="cart-layout">
-        <div>
-          <p data-cart-empty>Your repertoire is empty for now.</p>
-          <div class="cart-list" data-cart-list></div>
-        </div>
+      <div class="request-layout">
+        <section>
+          <h2>Selected collection</h2>
+          <p>Cercle is currently the only available reference. Add it to your repertoire from the Collections page, then submit your request on the right.</p>
+          <div class="feature-card">
+            <h3>Cercle Collection</h3>
+            <p class="cart-meta">Complete 18-piece porcelain service made in France with satin finishes and lead-free glaze.</p>
+          </div>
+        </section>
         <aside class="cart-summary">
-          <h2>Summary</h2>
-          <p>Total</p>
-          <p class="price" data-cart-total>€0</p>
-          <button class="button" type="button" data-open-modal>Submit acquisition request</button>
-          <p class="cart-meta">A Porcelaine advisor will confirm your order by email.</p>
+          <h2>Request form</h2>
+          <form class="form-grid" data-request-form data-confirmation="Your request has been recorded. We will reach out by email.">
+            <div>
+              <label for="last-name">Last name *</label>
+              <input id="last-name" name="last-name" type="text" autocomplete="family-name" required />
+            </div>
+            <div>
+              <label for="first-name">First name *</label>
+              <input id="first-name" name="first-name" type="text" autocomplete="given-name" required />
+            </div>
+            <div>
+              <label for="email">Email address *</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="form-row">
+              <div>
+                <label for="address-line1">Address (line 1) *</label>
+                <input id="address-line1" name="address-line1" type="text" autocomplete="address-line1" required />
+              </div>
+              <div>
+                <label for="address-line2">Address (line 2) *</label>
+                <input id="address-line2" name="address-line2" type="text" autocomplete="address-line2" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div>
+                <label for="postal-code">Postal code *</label>
+                <input id="postal-code" name="postal-code" type="text" autocomplete="postal-code" required />
+              </div>
+              <div>
+                <label for="city">City *</label>
+                <input id="city" name="city" type="text" autocomplete="address-level2" required />
+              </div>
+              <div>
+                <label for="country">Country *</label>
+                <input id="country" name="country" type="text" autocomplete="country-name" required />
+              </div>
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" />
+            </div>
+            <div class="checkbox-field">
+              <input id="contact-email" name="contact-email" type="checkbox" />
+              <label for="contact-email">I would like to be contacted by email</label>
+            </div>
+            <div>
+              <label for="quantity">Number of sets *</label>
+              <input id="quantity" name="quantity" type="number" min="1" value="1" required data-request-quantity />
+              <p class="form-help">The quantity is saved automatically for your next visit.</p>
+            </div>
+            <button class="button" type="submit">Send request</button>
+          </form>
+          <p class="cart-meta">We will confirm availability within 48 hours.</p>
         </aside>
       </div>
     </div>
@@ -67,7 +130,7 @@
   <div class="modal" aria-hidden="true" role="dialog" aria-modal="true" data-modal>
     <div class="modal-content">
       <h2>Thank you</h2>
-      <p>Your request has been recorded. We will reach out by email to finalize your order.</p>
+      <p>Your request has been recorded. We will reach out by email to finalize the acquisition.</p>
       <button class="button" type="button" data-close-modal>Close</button>
     </div>
   </div>
@@ -75,7 +138,12 @@
   <footer class="footer">
     <div class="container">
       <p>Porcelaine © 2024 — Contemporary atelier.</p>
-      <p>Contact: <a href="mailto:bonjour@porcelaine.example">bonjour@porcelaine.example</a></p>
+      <p>Contact: <a href="mailto:contact@porcelaine.fr">contact@porcelaine.fr</a></p>
+      <div class="footer-links">
+        <a href="legal-notice.html">Legal notice</a>
+        <a href="privacy-policy.html">Privacy policy</a>
+        <a href="terms-conditions.html">Terms &amp; conditions</a>
+      </div>
     </div>
   </footer>
 </body>

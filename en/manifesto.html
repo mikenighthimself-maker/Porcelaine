@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Manifesto — Porcelaine</title>
   <meta name="description" content="The Porcelaine manifesto: a porcelain maison devoted to table culture, enduring forms, and quiet distinction." />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
   <link rel="canonical" href="https://mikenighthimself-maker.github.io/Porcelaine/en/manifesto.html" />
   <link rel="alternate" hreflang="fr" href="https://mikenighthimself-maker.github.io/Porcelaine/fr/manifeste.html" />
   <link rel="alternate" hreflang="en" href="https://mikenighthimself-maker.github.io/Porcelaine/en/manifesto.html" />
@@ -23,16 +28,21 @@
 </head>
 <body>
   <a class="skip-link" href="#content">Skip to main content</a>
+  <div class="sr-only" aria-live="polite" aria-atomic="true" data-live-region></div>
 
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html">Porcelaine</a>
-      <nav class="nav-links" aria-label="Primary">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
+        <span aria-hidden="true"></span>
+        <span class="sr-only">Menu</span>
+      </button>
+      <nav class="nav-links" id="primary-navigation" aria-label="Primary" data-nav-links>
         <a href="index.html">Home</a>
         <a href="manifesto.html" aria-current="page">Manifesto</a>
         <a href="collections.html">Collections</a>
         <a href="repertoire.html">Repertoire <span class="badge" data-cart-count hidden>0</span></a>
-        <a href="information.html">Information</a>
+        <a href="informations.html">Information</a>
       </nav>
       <div class="nav-lang" aria-label="Language">
         <a class="lang-link" href="../fr/manifeste.html" data-lang="fr">FR</a>
@@ -69,7 +79,12 @@
   <footer class="footer">
     <div class="container">
       <p>Porcelaine © 2024 — Contemporary atelier.</p>
-      <p>Contact: <a href="mailto:bonjour@porcelaine.example">bonjour@porcelaine.example</a></p>
+      <p>Contact: <a href="mailto:contact@porcelaine.fr">contact@porcelaine.fr</a></p>
+      <div class="footer-links">
+        <a href="legal-notice.html">Legal notice</a>
+        <a href="privacy-policy.html">Privacy policy</a>
+        <a href="terms-conditions.html">Terms &amp; conditions</a>
+      </div>
     </div>
   </footer>
 </body>
