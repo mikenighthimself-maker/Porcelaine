@@ -31,6 +31,12 @@ body {
   line-height: 1.6;
 }
 
+body[data-lang-redirect] {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -277,6 +283,13 @@ textarea:focus-visible {
 
 .section {
   padding: 3rem 0;
+}
+
+body[data-lang-redirect] .section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
 }
 
 .section-title {
