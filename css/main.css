@@ -106,6 +106,10 @@ textarea:focus-visible {
   font-size: 0.95rem;
   font-family: var(--font-primary);
   letter-spacing: 0.02em;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.4rem 1.25rem;
 }
 
 .nav-toggle {
@@ -433,8 +437,8 @@ textarea {
     flex-direction: column;
     gap: 0.75rem;
     width: 100%;
-    padding: 1rem 0 0;
-    border-top: 1px solid var(--border);
+    padding: 1rem;
+    border-radius: var(--radius);
   }
   .nav-links.is-open {
     display: flex;
