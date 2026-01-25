@@ -31,6 +31,13 @@ body {
   line-height: 1.6;
 }
 
+body.home {
+  background-image: url("../assets/img/hero-porcelaine.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 body[data-lang-redirect] {
   min-height: 100svh;
   display: flex;
@@ -208,8 +215,8 @@ textarea:focus-visible {
 }
 
 .home .hero--full {
-  min-height: 100vh;
-  padding: 2rem 0;
+  min-height: 100svh;
+  padding: 0;
   background: linear-gradient(180deg, rgba(247, 243, 239, 0.9), rgba(247, 243, 239, 0.65));
 }
 
@@ -217,6 +224,7 @@ textarea:focus-visible {
   min-height: 100%;
   align-items: center;
   padding: 6rem 0 3rem;
+  grid-template-columns: minmax(360px, 1.25fr) minmax(280px, 0.75fr);
 }
 
 .hero-grid {
@@ -438,6 +446,9 @@ textarea {
 @media (max-width: 720px) {
   .hero--full {
     min-height: calc(100svh - 180px);
+  }
+  .home .hero-grid {
+    grid-template-columns: 1fr;
   }
   .header-inner {
     align-items: flex-start;
