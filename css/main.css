@@ -601,10 +601,13 @@ textarea {
 
 .footer-links {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 1rem;
   margin: 1rem 0 0;
   font-size: 0.9rem;
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .footer-inner {
