@@ -597,6 +597,21 @@ textarea {
   color: var(--muted);
 }
 
+.footer .container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.footer p {
+  margin: 0;
+  flex: 0 0 auto;
+}
+
 .footer a {
   color: inherit;
   text-decoration: underline;
@@ -606,7 +621,7 @@ textarea {
   display: flex;
   flex-wrap: nowrap;
   gap: 1rem;
-  margin: 1rem 0 0;
+  margin: 0;
   font-size: 0.9rem;
   white-space: nowrap;
   overflow-x: auto;
@@ -627,6 +642,18 @@ textarea {
   color: #fff;
   padding: 1.5rem;
   border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.footer-inner p {
+  margin: 0;
+  flex: 0 0 auto;
 }
 
 .footer-inner a {
