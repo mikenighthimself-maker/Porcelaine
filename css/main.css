@@ -630,6 +630,10 @@ textarea {
   white-space: nowrap;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  background: #1d4f91;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
 }
 
 .footer p {
@@ -676,6 +680,10 @@ footer {
   white-space: nowrap;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  background: #1d4f91;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
 }
 
 .footer-inner p {
