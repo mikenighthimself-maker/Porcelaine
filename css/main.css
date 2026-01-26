@@ -609,6 +609,13 @@ textarea {
   font-size: 0.66rem;
 }
 
+.footer-inner .container {
+  background: #1f3a5f;
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+}
+
 .footer-inner a {
   color: inherit;
   text-decoration: underline;
