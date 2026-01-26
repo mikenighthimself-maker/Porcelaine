@@ -557,6 +557,24 @@ textarea {
   font-size: 0.9rem;
 }
 
+.footer-inner {
+  width: 100%;
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--border);
+  background: #f2ede8;
+  color: var(--muted);
+  font-size: 0.66rem;
+}
+
+.footer-inner a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.footer-inner .footer-links {
+  font-size: 1em;
+}
+
 .modal {
   position: fixed;
   inset: 0;
