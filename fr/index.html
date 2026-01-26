@@ -27,61 +27,68 @@
   <script defer src="../js/main.js"></script>
 </head>
 <body class="home">
-  <div class="sr-only" aria-live="polite" aria-atomic="true" data-live-region></div>
+  <img
+    class="hero-bg"
+    src="../assets/img/hero_1920x1080.svg"
+    alt=""
+    aria-hidden="true"
+  />
+  <div class="page">
+    <div class="sr-only" aria-live="polite" aria-atomic="true" data-live-region></div>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="nav-lang" aria-label="Langue">
-        <a class="lang-link active" href="index.html" data-lang="fr">FR</a>
-        <span aria-hidden="true">|</span>
-        <a class="lang-link" href="../en/index.html" data-lang="en">EN</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="nav-lang" aria-label="Langue">
+          <a class="lang-link active" href="index.html" data-lang="fr">FR</a>
+          <span aria-hidden="true">|</span>
+          <a class="lang-link" href="../en/index.html" data-lang="en">EN</a>
+        </div>
+        <a class="brand" href="index.html" aria-current="page">
+          <span class="brand-logo" aria-hidden="true">
+            <img src="../assets/icons/favicon.svg" alt="" />
+          </span>
+          <span class="brand-name">Maison Andresi</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navigation-principale" data-nav-toggle>
+          <span aria-hidden="true"></span>
+          <span class="sr-only">Menu</span>
+        </button>
+        <nav class="nav-links" id="navigation-principale" aria-label="Navigation principale" data-nav-links>
+          <a href="manifeste.html">Manifeste</a>
+          <a href="collections.html">Collections</a>
+          <a href="repertoire.html">Répertoire</a>
+          <a href="informations.html">Informations</a>
+        </nav>
       </div>
-      <a class="brand" href="index.html" aria-current="page">
-        <span class="brand-logo" aria-hidden="true">
-          <img src="../assets/icons/favicon.svg" alt="" />
-        </span>
-        <span class="brand-name">Maison Andresi</span>
-      </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navigation-principale" data-nav-toggle>
-        <span aria-hidden="true"></span>
-        <span class="sr-only">Menu</span>
-      </button>
-      <nav class="nav-links" id="navigation-principale" aria-label="Navigation principale" data-nav-links>
-        <a href="manifeste.html">Manifeste</a>
-        <a href="collections.html">Collections</a>
-        <a href="repertoire.html">Répertoire</a>
-        <a href="informations.html">Informations</a>
-      </nav>
-    </div>
-  </header>
+    </header>
 
-  <main id="contenu">
-    <section class="hero hero--full">
-      <img class="hero-image hero-image--full" src="../assets/img/hero-porcelaine.svg" alt="Dégradé lumineux en porcelaine." loading="lazy" />
-      <div class="container hero-grid">
-        <div class="hero-card">
-          <h1>La distinction, sans discours.</h1>
-          <p> Certaines choses se reconnaissent sans s’expliquer.Une attention portée aux proportions.Une manière d’habiter le geste.
+    <main id="contenu">
+      <section class="hero hero--full container">
+        <div class="hero-grid">
+          <div class="hero-card">
+            <h1>La distinction, sans discours.</h1>
+            <p> Certaines choses se reconnaissent sans s’expliquer.Une attention portée aux proportions.Une manière d’habiter le geste.
 Une sensibilité à ce qui tient dans le temps. Ici, l’équilibre guide les choix. La forme structure l’expérience. Ce qui compte se révèle dans la durée, à ceux qui savent regarder.</p>
-          <div class="hero-actions">
-            <a class="button" href="collections.html">Découvrir la collection</a>
-            <a class="button secondary" href="manifeste.html">Lire notre manifeste</a>
+            <div class="hero-actions">
+              <a class="button" href="collections.html">Découvrir la collection</a>
+              <a class="button secondary" href="manifeste.html">Lire notre manifeste</a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
 
-  <footer class="footer-inner">
-    <div class="container">
-      <p>Porcelaine © 2024 — Atelier contemporain.</p>
-      <p>Contact : <a href="mailto:contact@porcelaine.fr">contact@porcelaine.fr</a></p>
-      <div class="footer-links">
-        <a href="mentions-legales.html">Mentions légales</a>
-        <a href="politique-confidentialite.html">Politique de confidentialité</a>
-        <a href="cgv.html">Conditions générales de vente</a>
+    <footer class="footer-inner">
+      <div class="container">
+        <p>Porcelaine © 2024 — Atelier contemporain.</p>
+        <p>Contact : <a href="mailto:contact@porcelaine.fr">contact@porcelaine.fr</a></p>
+        <div class="footer-links">
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="politique-confidentialite.html">Politique de confidentialité</a>
+          <a href="cgv.html">Conditions générales de vente</a>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 </body>
 </html>
