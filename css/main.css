@@ -13,6 +13,7 @@
   --radius: 18px;
   --max-width: 1120px;
   --font-primary: "Canela", "Times New Roman", serif;
+  --font-brand: "Editorial New", "Canela", "Times New Roman", serif;
   --font-secondary: "Inter", "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
 }
@@ -32,7 +33,7 @@ body {
 }
 
 body.home {
-  background-image: url("../assets/img/hero-porcelaine.jpg");
+  background-image: url("../assets/img/hero-porcelaine.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -105,7 +106,7 @@ textarea:focus-visible {
 }
 
 .brand {
-  font-family: var(--font-primary);
+  font-family: var(--font-brand);
   font-weight: 500;
   letter-spacing: 0.02em;
   text-transform: none;
@@ -313,6 +314,7 @@ body[data-lang-redirect] .section {
   flex: 1;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 2rem 0;
 }
 
@@ -602,6 +604,7 @@ textarea {
   text-align: center;
   display: grid;
   gap: 1.5rem;
+  font-family: var(--font-brand);
 }
 
 .language-actions {
