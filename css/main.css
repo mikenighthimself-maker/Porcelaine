@@ -216,6 +216,7 @@ textarea:focus-visible {
 
 .home .hero--full {
   min-height: 100svh;
+  height: 100svh;
   padding: 0;
   background: linear-gradient(180deg, rgba(247, 243, 239, 0.9), rgba(247, 243, 239, 0.65));
   position: relative;
