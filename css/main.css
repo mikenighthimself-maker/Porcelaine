@@ -619,6 +619,8 @@ textarea {
 
 .footer-links {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   flex-wrap: nowrap;
   gap: 1rem;
   margin: 0;
