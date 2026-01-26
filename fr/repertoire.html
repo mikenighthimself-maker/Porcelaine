@@ -32,7 +32,17 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html">Maison Andresi</a>
+      <div class="nav-lang" aria-label="Langue">
+        <a class="lang-link active" href="repertoire.html" data-lang="fr">FR</a>
+        <span aria-hidden="true">|</span>
+        <a class="lang-link" href="../en/repertoire.html" data-lang="en">EN</a>
+      </div>
+      <a class="brand" href="index.html">
+        <span class="brand-logo" aria-hidden="true">
+          <img src="../assets/icons/favicon.svg" alt="" />
+        </span>
+        <span class="brand-name">Maison Andresi</span>
+      </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navigation-principale" data-nav-toggle>
         <span aria-hidden="true"></span>
         <span class="sr-only">Menu</span>
@@ -43,11 +53,6 @@
         <a href="repertoire.html" aria-current="page">Répertoire</a>
         <a href="informations.html">Informations</a>
       </nav>
-      <div class="nav-lang" aria-label="Langue">
-        <a class="lang-link active" href="repertoire.html" data-lang="fr">FR</a>
-        <span aria-hidden="true">|</span>
-        <a class="lang-link" href="../en/repertoire.html" data-lang="en">EN</a>
-      </div>
     </div>
   </header>
 
@@ -134,7 +139,7 @@
     </div>
   </div>
 
-  <footer class="footer">
+  <footer class="footer-inner">
     <div class="container">
       <p>Porcelaine © 2024 — Atelier contemporain.</p>
       <p>Contact : <a href="mailto:contact@porcelaine.fr">contact@porcelaine.fr</a></p>
