@@ -216,8 +216,11 @@ textarea:focus-visible {
 
 .home .hero--full {
   min-height: 100svh;
+  height: 100svh;
   padding: 0;
   background: linear-gradient(180deg, rgba(247, 243, 239, 0.9), rgba(247, 243, 239, 0.65));
+  position: relative;
+  overflow: hidden;
 }
 
 .home .hero-grid {
@@ -225,6 +228,8 @@ textarea:focus-visible {
   align-items: center;
   padding: 6rem 0 3rem;
   grid-template-columns: minmax(360px, 1.25fr) minmax(280px, 0.75fr);
+  position: relative;
+  z-index: 1;
 }
 
 .hero-grid {
@@ -244,6 +249,17 @@ textarea:focus-visible {
   object-fit: cover;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+}
+
+.home .hero-image--full {
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  height: 100svh;
+  max-height: none;
+  border-radius: 0;
+  box-shadow: none;
+  z-index: 0;
 }
 
 .hero-card {
