@@ -640,10 +640,6 @@ textarea {
 }
 
 .footer-inner .container {
-  background: #1f3a5f;
-  color: #fff;
-  padding: 1.5rem;
-  border-radius: var(--radius);
   display: flex;
   align-items: center;
   gap: 1.5rem;
