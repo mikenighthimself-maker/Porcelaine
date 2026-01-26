@@ -228,9 +228,14 @@ textarea:focus-visible {
   min-height: 100%;
   align-items: center;
   padding: 6rem 0 3rem;
-  grid-template-columns: minmax(360px, 1.25fr) minmax(280px, 0.75fr);
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
   position: relative;
   z-index: 1;
+}
+
+.home .hero-card {
+  width: min(100%, 680px);
 }
 
 .hero-grid {
